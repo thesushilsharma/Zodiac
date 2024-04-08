@@ -8,6 +8,24 @@ This Next.js application allows you to explore your daily, weekly, monthly or mo
 - **Horoscope Display**: View your personalized horoscope text in a dedicated section.
 - **Clean and Responsive UI**: Tailwind CSS ensures a beautiful and responsive layout across different devices.
 
+## Data Source
+
+- Fetches horoscopes data from [API]()
+
+## Usage:
+
+- Visit the application in your browser.
+- Select your zodiac sign from the dropdown menu.
+- Choose your desired horoscope timeframe:
+    - Today
+    - Tomorrow
+    - Yesterday
+    - Weekly
+    - Monthly
+    - Specific Date (enter in YYYY-MM-DD format) 
+- Click the "Get Horoscope" button.
+- Your personalized horoscope will be  displayed below.
+
 ## Prerequisites
 
 - Node.js installed on your machine
@@ -22,6 +40,10 @@ This Next.js application allows you to explore your daily, weekly, monthly or mo
    ```
 
 2. Install dependencies:
+    - [axios](https://axios-http.com/): Promise-based HTTP client for the browser and Node.js
+    - [cheerio](https://cheerio.js.org/): Fast, flexible & lean implementation of core jQuery designed specifically for the server
+    - [moment](https://momentjs.com/): Parse, validate, manipulate, and display dates and times in JavaScript
+    
     ```
     cd Zodiac
     npm i
