@@ -12,7 +12,7 @@ This Next.js application allows you to explore your daily, weekly, monthly or mo
 
 - Fetches horoscopes data from [API]()
 
-## Usage:
+## Usage
 
 - Visit the application in your browser.
 - Select your zodiac sign from the dropdown menu.
@@ -66,3 +66,6 @@ Feel free to fork the repository and submit pull requests with your improvements
 ## License
 
 This project is licensed under the MIT License.  See the [LICENSE](https://github.com/thesushilsharma/Zodiac/blob/main/LICENSE) file for details.
+
+## Acknowledgements
+- This project is for educational purposes only.
