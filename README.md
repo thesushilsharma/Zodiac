@@ -10,7 +10,13 @@ This Next.js application allows you to explore your daily, weekly, monthly or mo
 
 ## Data Source
 
-- Fetches horoscopes data from [API]()
+- Fetches horoscope data from [API]()
+
+## API Route
+The application utilizes an API route (/api/horoscope) to fetch horoscope data from the external website. This route accepts query parameters for zodiacSign and timeFrame.
+
+## Endpoints
+- GET
 
 ## Usage
 
