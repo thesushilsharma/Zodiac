@@ -19,12 +19,21 @@ The application utilizes an API route (/api/horoscope) to fetch horoscope data f
 ### Get Horoscope for Today, Tomorrow, or Yesterday
 - **Method**: GET
    - `http://localhost:3000/api/horoscope?zodiacSign=Cancer&period=today`
-   > Replace `Cancer` with the desired zodiac sign and `today` with the any timeframe you like.
+   > Replace `Cancer` with the desired zodiac sign and `today` with any timeframe you like.
 
 ### Get Weekly or Monthly Horoscope
 - **Method**: GET
    - `http://localhost:3000/api/horoscope?zodiacSign=Cancer&period=weekly`
-   > Replace `Cancer` with the desired zodiac sign and `weekly` with the any timeframe you like.
+   > Replace `Cancer` with the desired zodiac sign and `weekly` with any timeframe you like.
+
+### Get Specific Date Horoscope
+- **Method**: GET
+   - `http://localhost:3000/api/horoscope?zodiacSign=Cancer&period=YYYY-MM-DD`
+   > Replace `Cancer` with the desired zodiac sign and `YYYY-MM-DD` with a date within the last year.
+
+### Get Previous or Current Year Horoscope
+- **Method**: GET
+   
 
 ## Usage
 
@@ -42,8 +51,10 @@ The application utilizes an API route (/api/horoscope) to fetch horoscope data f
 
 ## Prerequisites
 
+- VS Code or any Code editor
 - Node.js installed on your machine
-- npm or yarn package manager
+- npm package manager
+- To make API requests, you can use either the Postman or Thunder client extension in VS Code.
 
 ## Installation
 
