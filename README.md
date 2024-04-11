@@ -10,7 +10,7 @@ This Next.js application allows you to explore your daily, weekly, monthly or mo
 
 ## Data Source
 
-- Fetches horoscope data from [API]()
+- Fetches(web scraping) horoscope data from [API](https://www.horoscope.com/us/index.aspx)
 
 ## API Route
 The application utilizes an API route (/api/horoscope) to fetch horoscope data from the external website. This route accepts query parameters for zodiacSign and timeFrame.
@@ -26,15 +26,14 @@ The application utilizes an API route (/api/horoscope) to fetch horoscope data f
    - `http://localhost:3000/api/horoscope?zodiacSign=Cancer&period=weekly`
    > Replace `Cancer` with the desired zodiac sign and `weekly` with any timeframe you like.
 
-### Get Specific Date Horoscope
+### Get Specific Date Horoscope (In Progress)
 - **Method**: GET
    - `http://localhost:3000/api/horoscope?zodiacSign=Cancer&period=YYYY-MM-DD`
    > Replace `Cancer` with the desired zodiac sign and `YYYY-MM-DD` with a date within the last year.
 
-### Get Previous or Current Year Horoscope
+### Get Previous or Current Year Horoscope (In Progress)
 - **Method**: GET
    
-
 ## Usage
 
 - Visit the application in your browser.
@@ -82,7 +81,7 @@ This starts the development server and opens your app in the browser, typically 
 
 ## Deployment:
 
-You can deploy this API to a production server using a platform like Vercel, Netlify or any of your choice
+You can deploy this API to a production server using a platform like Vercel, Netlify or any of your choice.
 
 ## Contributing
 
