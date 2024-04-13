@@ -1,33 +1,17 @@
-import Image from "next/image";
-import Horoscope from '../components/Horoscope';
+import Horoscope from "@/components/Horoscope";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
-      <div className="container flex flex-col items-center justify-center py-8 mx-auto min-h-screen">
-        <div className="flex">
-          <a
-            className="-m-1.5 p-1.5"
-            href="https://github.com/thesushilsharma"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            hi{" "}
-            <Image
-              src="./zodiac.svg"
-              alt="Logo"
-              className="h-8 w-auto"
-              width={180}
-              height={37}
-              priority
-            />
-          </a>
-        </div>
-
+    <main className='min-h-screen flex flex-col'>
+      <Header />
+      <section className="flex flex-col items-center justify-center md:h-[40rem] w-full rounded-md relative overflow-hidden mx-auto py-10 md:py-10">
         <div className="rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
           <Horoscope />
         </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+    </main>
   );
 }
