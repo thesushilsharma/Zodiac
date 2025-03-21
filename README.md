@@ -4,9 +4,32 @@ This Next.js application allows you to explore your daily, weekly, monthly or mo
 ## Features
 
 - **Zodiac Sign Selection**: Choose your zodiac sign from a dropdown menu.
-- **Date Selection**: Select the desired date for your horoscope (today, tomorrow, yesterday, weekly, or monthly).
-- **Horoscope Display**: View your personalized horoscope text in a dedicated section.
-- **Clean and Responsive UI**: Tailwind CSS ensures a beautiful and responsive layout across different devices.
+- **Personalized Horoscopes**: Get daily, weekly, monthly, and yearly horoscopes tailored to your zodiac sign.
+- **Compatibility Insights**: Check relationship compatibility based on astrology.
+- **Planetary Transits**: Stay updated with real-time planetary movements and their influence.
+
+> **_NOTE:_** Work In progress  
+- **Interactive Elements**: Daily lucky numbers, tarot card pulls, and astrology trends.
+- **Multi-Astrology Support**: Choose from Western astrology, Vedic astrology, or Lo Shu Grid numerology.
+- **Dynamic Date Selection**: Users can select any date range for customized insights.
+- **Celestial-Themed UI**: A sleek, modern design with smooth navigation and an immersive experience.
+
+## Supported Zodiac Systems
+
+1. Western Astrology
+ - 12 Zodiac Signs (Aries - Pisces)
+ - Based on sun signs
+ - Elemental classification (Fire, Earth, Air, Water)
+
+> **_NOTE:_** Work In progress  
+2. Vedic Astrology (Jyotish)
+ - 12 Rashi (Moon Signs) & 27 Nakshatras
+ - Based on the Sidereal zodiac system
+ - Birth chart (Kundali) analysis
+
+3. Lo Shu Grid Numerology
+ - Based on ancient Chinese numerology
+ - Grid-based calculations for personality and destiny numbers
 
 ## Data Source
 
@@ -16,7 +39,7 @@ This Next.js application allows you to explore your daily, weekly, monthly or mo
 The application utilizes an API route (/api/horoscope) to fetch horoscope data from the external website. This route accepts query parameters for zodiacSign and timeFrame.
 
 ## Endpoints
-### Get Horoscope for Today, Tomorrow, or Yesterday
+### Get a Horoscope for Today, Tomorrow, or Yesterday
 - **Method**: GET
    - `http://localhost:3000/api/horoscope?zodiacSign=Cancer&period=today`
    > Replace `Cancer` with the desired zodiac sign and `today` with any timeframe you like.
@@ -50,10 +73,10 @@ The application utilizes an API route (/api/horoscope) to fetch horoscope data f
 
 ## Prerequisites
 
-- VS Code or any Code editor
+- VS Code or any Code Editor
 - Node.js installed on your machine
 - npm package manager
-- To make API requests, you can use either the Postman or Thunder client extension in VS Code.
+- Use the Postman or Thunder client extension in VS Code to make API requests.
 
 ## Installation
 
