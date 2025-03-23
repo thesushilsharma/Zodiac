@@ -1,28 +1,40 @@
-import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export default function Footer() {
-    return (
-        <footer className="text-gray-400 bg-gray-900 body-font mt-auto">
-            <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col ">
-                <a
-                    className="-m-1.5 p-1.5 flex title-font font-medium items-center md:justify-start justify-center text-white"
-                    href="https://github.com/thesushilsharma"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image
-                        src="./zodiac.svg"
-                        alt="Logo"
-                        className="h-8 w-auto"
-                        width={180}
-                        height={37}
-                        priority
-                    />
-                </a>
-                <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2024 Sushil Sharma —
-                    <a href="https://www.linkedin.com/in/thesushilsharma/" className="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@thesushilsharma</a>
-                </p>
-            </div>
-        </footer>
-    )
+  const currentYear = new Date().getFullYear();
+  return (
+    <footer className="border-t bg-background text-primary mt-auto">
+      <div className="container px-4 py-6 mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <Link
+          href="https://github.com/thesushilsharma"
+          className="flex items-center gap-2 hover:text-foreground transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Avatar className="w-24 h-8">
+            <AvatarImage src="./zodiac.svg" alt="Logo" />
+            <AvatarFallback>SS</AvatarFallback>
+          </Avatar>
+          <span className="font-medium">Sushil Sharma</span>
+        </Link>
+
+        <div className="flex items-center gap-2 text-sm mt-4 sm:mt-0">
+          <span> &copy; {currentYear} Sushil Sharma</span>
+          <Separator orientation="vertical" className="h-4" />
+          <Link
+            href="https://www.linkedin.com/in/thesushilsharma/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="ghost" size="sm" className="h-8 px-2">
+              <span>@thesushilsharma</span>
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
 }

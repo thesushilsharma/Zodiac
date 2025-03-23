@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { FormEvent } from "react";
 import SubmitBtn from "@/components/SubmitBtn";
 import HoroscopePost from "@/components/HoroscopePost";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Label } from "./ui/label";
 
 function Horoscope() {
   const [zodiacSymbol, setZodiacSymbol] = useState("");
@@ -52,58 +54,75 @@ function Horoscope() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6 space-y-4 md:space-y-6 sm:px-2">
-      <h1 className="text-xl font-bold leading-tight tracking-tight text-center md:text-2xl dark:text-white">
-        Star Material
-      </h1>
-      <form onSubmit={handleSubmit} className="space-y-8 md:space-y-6">
-        <div className="container mx-auto max-w-sm px-4 py-2">
-          <label
-            className="block mb-2 text-sm font-medium text-center dark:text-white"
-            htmlFor="zodiacSymbol"
-          >
-            Your Zodiac:
-          </label>
-          <select
-            value={zodiacSymbol}
-            className="bg-gray-50 border border-gray-300 sm:text-xs rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            onChange={(event) => setZodiacSymbol(event.target.value)}
-            required
-          >
-            <option value="">Select your zodiac sign</option>
-            {Object.keys(zodiacSigns).map((sign) => (
-              <option key={sign} value={sign}>
-                {sign}
-              </option>
-            ))}
-          </select>
-          <label
-            className="block mb-2 text-sm font-medium text-center dark:text-white"
-            htmlFor="period"
-          >
-            Timeframe:
-          </label>
-          <select
-            id="period"
-            value={period}
-            className="bg-gray-50 border border-gray-300 sm:text-xs rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            onChange={(event) => setPeriod(event.target.value)}
-            required
-          >
-            <option value="">Select</option>
-            <option value="today">Today</option>
-            <option value="tomorrow">Tomorrow</option>
-            <option value="yesterday">Yesterday</option>
-            <option value="weekly">Weekly</option>
-            <option value="monthly">Monthly</option>
-          </select>
+    <section className="w-full py-12">
+      <div className="container mx-auto px-4 space-y-6">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
+            Star Material
+          </h1>
 
-          <SubmitBtn />
+          <Card className="w-full max-w-md mx-auto">
+            <CardHeader>
+              <CardTitle className="text-center text-lg">
+                Your Cosmic Forecast
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="zodiacSymbol" className="text-center block">
+                      Your Zodiac:
+                    </Label>
+                    <select
+                      value={zodiacSymbol}
+                      className="bg-card border border-border sm:text-xs rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5"
+                      onChange={(event) => setZodiacSymbol(event.target.value)}
+                      required
+                    >
+                      <option value="">Select your zodiac sign</option>
+                      {Object.keys(zodiacSigns).map((sign) => (
+                        <option key={sign} value={sign}>
+                          {sign}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="period" className="text-center block">
+                      Timeframe:
+                    </Label>
+                    <select
+                      id="period"
+                      value={period}
+                      className="bg-card border border-border sm:text-xs rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5"
+                      onChange={(event) => setPeriod(event.target.value)}
+                      required
+                    >
+                      <option value="">Select</option>
+                      <option value="today">Today</option>
+                      <option value="tomorrow">Tomorrow</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="weekly">Weekly</option>
+                      <option value="monthly">Monthly</option>
+                    </select>
+                  </div>
+                </div>
+
+                <SubmitBtn />
+              </form>
+            </CardContent>
+          </Card>
+
+          {horoscope && (
+            <div className="w-full max-w-3xl mx-auto mt-6">
+              <HoroscopePost horoscope={horoscope} />
+            </div>
+          )}
         </div>
-      </form>
-
-      <div>{horoscope && <HoroscopePost horoscope={horoscope} />}</div>
-    </div>
+      </div>
+    </section>
   );
 }
 

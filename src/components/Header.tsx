@@ -1,27 +1,23 @@
-import React from 'react'
-import Image from "next/image";
+import React from 'react';
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 export default function Header() {
     return (
-        <header className="text-gray-400 bg-gray-900 body-font">
-           <div className='mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8'>
-           <div className="flex">
-                <a
-                    className="-m-1.5 p-1.5"
+        <header className="border-b bg-background">
+            <div className="container mx-auto flex items-center justify-center p-4 sm:p-6">
+                <Link
                     href="https://github.com/thesushilsharma"
+                    className="flex items-center hover:opacity-80 transition-opacity"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <Image
-                        src="./zodiac.svg"
-                        alt="Logo"
-                        className="h-8 w-auto"
-                        width={180}
-                        height={37}
-                        priority
-                    />
-                </a>
+                    <Avatar className="h-10 w-40">
+                        <AvatarImage src="./zodiac.svg" alt="Logo" />
+                        <AvatarFallback>SS</AvatarFallback>
+                    </Avatar>
+                </Link>
             </div>
-           </div>
         </header>
-    )
+    );
 }
