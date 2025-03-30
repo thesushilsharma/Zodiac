@@ -1,4 +1,5 @@
 import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 type HoroscopeProps = {
   horoscope: string;
@@ -6,13 +7,19 @@ type HoroscopeProps = {
 
 function HoroscopePost({ horoscope }: HoroscopeProps) {
   return (
-    <div className="container p-4 max-w-full overflow-hidden mx-auto">
-      <h2 className="block mb-2 text-base font-medium text-center">
-        Your Horoscope
-      </h2>
-      <p className="block p-2.5 w-full text-sm text-balance text-center bg-card rounded-lg shadow-sm border border-border focus:ring-primary focus:border-primary">
-        {horoscope}
-      </p>
+    <div className="container mx-auto p-4">
+      <Card className="w-full border-foreground">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base font-medium text-center outline-foreground">
+            Your Horoscope
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-center">
+            {horoscope}
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }
