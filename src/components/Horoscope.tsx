@@ -4,7 +4,13 @@ import React, { useState } from "react";
 import { FormEvent } from "react";
 import SubmitBtn from "@/components/SubmitBtn";
 import HoroscopePost from "@/components/HoroscopePost";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import { Label } from "./ui/label";
 
 function Horoscope() {
@@ -56,12 +62,12 @@ function Horoscope() {
   return (
     <section className="w-full py-12">
       <div className="container mx-auto px-4 space-y-6">
-        <div className="flex flex-col items-center justify-center space-y-4">
+        <div className="flex flex-col items-center justify-center space-y-4 border-foreground">
           <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
             Star Material
           </h1>
 
-          <Card className="w-full max-w-md mx-auto">
+          <Card className="w-full border-foreground">
             <CardHeader>
               <CardTitle className="text-center text-lg">
                 Your Cosmic Forecast
@@ -113,13 +119,14 @@ function Horoscope() {
                 <SubmitBtn />
               </form>
             </CardContent>
+            <CardFooter>
+              {horoscope && (
+                <div className="w-full max-w-3xl mx-auto mt-6">
+                  <HoroscopePost horoscope={horoscope} />
+                </div>
+              )}
+            </CardFooter>
           </Card>
-
-          {horoscope && (
-            <div className="w-full max-w-3xl mx-auto mt-6">
-              <HoroscopePost horoscope={horoscope} />
-            </div>
-          )}
         </div>
       </div>
     </section>
