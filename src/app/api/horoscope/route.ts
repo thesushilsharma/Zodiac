@@ -86,9 +86,9 @@ export async function GET(request: Request) {
     }
 
     return NextResponse.json(horoscopeText, { status: 200 });
-  } catch (error) {
+  } catch (error: any) {
     return NextResponse.json(
-      { error: "Internal Server Error" },
+      { error: `Internal Server Error ${error}` },
       { status: 500 }
     );
   }
